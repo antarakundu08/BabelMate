@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(0, 72, 72);
+}
+
+.container{
+    width: 80%;
+    background:  aliceblue;
+    border-radius: 15px;
+    padding: 5%;
+}
+.wrapper{
+    border-radius: 5px;
+    border: 1px solid #bbb;
+}
+
+.wrapper .text-input{
+    display: flex;
+    border-bottom: 1px solid #bbb;
+}
+.wrapper .to-text{
+    border-left: 1px solid #bbb;
+    border-radius: 0px;
+}
+
+.text-input textarea{
+    width: 100%;
+    height: 250px;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    font-size: 18px;
+    padding: 2%;
+}
+
+.controls, li, .icons, .icons i {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controls{
+    list-style: none;
+    padding: 14px 15px;
+}
+
+.controls .row.from .icons {
+    padding-right: 15px;
+    border-right: 1px solid #bbb;
+}
+
+.controls .row.to .icons {
+    padding-left: 15px;
+    border-left: 1px solid #bbb;
+}
+
+.controls .icons{
+    width: 38%;
+}
+
+.controls .icons i{
+    width: 50px;
+    color: rgb(82, 62, 34);
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: center;
+}
+
+select{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: none;
+}
+
+.container button{
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: aliceblue;
+    font-size: 17px;
+    border-radius: 5px;
+    background: rgb(0, 72, 72);
+}
