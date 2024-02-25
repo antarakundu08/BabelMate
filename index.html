@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+    
     <div class="container">
         <div class="wrapper">
             <div class="text-input">
@@ -17,8 +18,8 @@
             <ul class="controls">
                 <li class="row-from">
                     <div class="icons">
-                        <i class="fa fa-volume-up"></i>
-                        <i class="fa fa-copy"></i>
+                        <i id = "from-vol" class="fa fa-volume-up"></i>
+                        <i id = "from-copy" class="fa fa-copy"></i>
                     </div>
                     <select>
                         <option value="en-US">English</option>
@@ -34,8 +35,8 @@
                         <option value="ne-NP">Nepali</option>
                     </select>
                     <div class="icons">
-                        <i class="fa fa-volume-up"></i>
-                        <i class="fa fa-copy"></i>
+                        <i id = "to-vol" class="fa fa-volume-up"></i>
+                        <i id = "to-copy" class="fa fa-copy"></i>
                     </div>
                 </li>
             </ul>
@@ -44,6 +45,9 @@
     </div>
 
     <script src="js/countries.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

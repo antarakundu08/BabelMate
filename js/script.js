@@ -49,6 +49,9 @@ exchange.addEventListener('click', async () => {
     document.querySelector(".from-text").value = text1;
     document.querySelector(".to-text").value = text2;
 
+    document.querySelector(".row-from select").value = lang1;
+    document.querySelector(".row-to select").value = lang2;
+
     console.log(text1, text2, lang1.slice(0,2),lang2.slice(0,2));
 
     const apiUrl = `https://api.mymemory.translated.net/get?q=${text1}&langpair=${lang1.slice(0,2)}|${lang2.slice(0,2)}`;
@@ -57,4 +60,61 @@ exchange.addEventListener('click', async () => {
 
     text2.value = responseText.responseData.translatedText;
     console.log(responseText);
+});
+
+
+// handle speak button click
+const speakFrom = document.getElementById("from-vol");
+const speakTo = document.getElementById("to-vol");
+
+function handleSpeakBtn( text, language ) {
+    let utterance = new SpeechSynthesisUtterance();
+    console.log(text, language);
+    console.log(utterance.lang);
+
+    utterance.text = text;
+    utterance.lang = language;
+
+    window.speechSynthesis.speak(utterance);
+}
+
+speakFrom.addEventListener("click", () => {
+    let text = document.querySelector(".from-text").value;
+    let lang = document.querySelector(".row-from select").value;
+    handleSpeakBtn(text,lang);
+});
+
+speakTo.addEventListener("click", () => {
+    let text = document.querySelector(".to-text").value;
+    let lang = document.querySelector(".row-to select").value;
+    handleSpeakBtn(text,lang);
+    
+});
+
+// Handle copy click
+const copyFrom = document.getElementById("from-copy");
+const copyTo = document.getElementById("to-copy");
+
+function handleCopyBtn( copyTextarea, event ) {
+    copyTextarea.focus();
+
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+        toastr.success('Copied Text');
+    } catch (err) {
+        console.log(err);
+        toastr.error('Error copying text', 'Ooops!');
+    }
+}
+
+copyFrom.addEventListener('click', (event) => {
+    let text = document.querySelector(".from-text");
+    handleCopyBtn(text, event);
+});
+
+copyTo.addEventListener('click', (event) => {
+    let text = document.querySelector(".to-text");
+    handleCopyBtn(text, event);
 });
